@@ -1,20 +1,20 @@
 import React from "react";
 import{AiOutlineMinus, AiOutlinePlus} from 'react-icons/ai'
 
-function Question({title, info}){
+function Question({question}){
     const [change, setChange] =React.useState(true)
 
     function changeButton(){
-        setChange(current => !current);
+        setChange(prevState => !prevState);
     }
 
     return(
         <article className='question'>
             <header>
-                <h4>{title}</h4>
+                <h4>{question.title}</h4>
                 <button className="btn" onClick={changeButton}>{change? <AiOutlineMinus/> : <AiOutlinePlus/>}</button>
             </header>
-            {change &&<p>{info}</p>}
+            {change &&<p>{question.info}</p>}
         </article>
     )
 }

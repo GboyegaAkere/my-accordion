@@ -13,7 +13,7 @@ function App(){
           {questions.map((question)=>{
             return(
               <>
-                <Question key={question.id} {...question}/>
+                <Question key={question.id} question={question}/>
               </>
             )
           })}
